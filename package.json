@@ -1,0 +1,42 @@
+{
+	"name": "rollup-plugin-replace-ast",
+	"version": "1.0.0",
+	"description": "rollup插件，使用AST方式的rollup-plugin-replace类似插件",
+	"homepage": "https://github.com/idler8/rollup-plugin-replace-ast",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/idler8/rollup-plugin-replace-ast"
+	},
+	"keywords": [
+		"rollup",
+		"rollup-plugin",
+		"es2015",
+		"npm",
+		"modules"
+	],
+	"author": "潘丽敏",
+	"scripts": {
+		"build": "rollup -c"
+	},
+	"license": "MIT",
+	"dependencies": {
+		"estree-walker": "^0.8.1",
+		"magic-string": "^0.25.2",
+		"rollup-pluginutils": "^2.6.0"
+	},
+	"main": "dist/rollup-plugin-replace-ast.cjs.js",
+	"module": "dist/rollup-plugin-replace-ast.es.js",
+	"devDependencies": {
+		"@babel/core": "^7.1.2",
+		"@babel/plugin-proposal-class-properties": "^7.5.5",
+		"@babel/plugin-transform-runtime": "^7.6.2",
+		"@babel/preset-env": "^7.1.0",
+		"@babel/runtime": "^7.1.2",
+		"babel-loader": "^8.0.4",
+		"rollup": "^1.20.3",
+		"rollup-plugin-babel": "^4.3.3",
+		"rollup-plugin-commonjs": "^10.1.0",
+		"rollup-plugin-json": "^4.0.0",
+		"rollup-plugin-terser": "^5.1.1"
+	}
+}
