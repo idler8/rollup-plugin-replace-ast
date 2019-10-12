@@ -1,6 +1,6 @@
 {
 	"name": "rollup-plugin-replace-ast",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "rollup插件，使用AST方式的rollup-plugin-replace类似插件",
 	"homepage": "https://github.com/idler8/rollup-plugin-replace-ast",
 	"repository": {
