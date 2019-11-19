@@ -1,5 +1,7 @@
 # rollup-plugin-replace-ast
-[![](https://img.shields.io/npm/v/rollup-plugin-replace.svg?style=flat)](https://www.npmjs.com/package/rollup-plugin-replace-ast)
+![npm](https://img.shields.io/npm/dm/rollup-plugin-replace-ast)
+
+![npm](https://img.shields.io/npm/v/rollup-plugin-replace-ast) ![npm bundle size](https://img.shields.io/bundlephobia/min/rollup-plugin-replace-ast) ![GitHub top language](https://img.shields.io/github/languages/top/idler8/rollup-plugin-replace-ast)
 
 使用AST替换全局ENV变量，类似rollup-plugin-replace，得到的内容更加简洁
 
