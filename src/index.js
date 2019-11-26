@@ -32,7 +32,7 @@ export default function replace(options = {}) {
 							end = node.end;
 						let nkeys = [];
 						while (node.object) {
-							nkeys.unshift(node.property.name);
+							nkeys.unshift(node.property.name || node.property.value);
 							node = node.object;
 						}
 						if (node.name != 'ENV') return this.skip();
