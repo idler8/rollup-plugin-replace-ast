@@ -27,6 +27,9 @@ export default function replace(options = {}) {
 			let magicString = new MagicString(code);
 			walk(this.parse(code), {
 				enter: function(node, parent, prop, index) {
+					if (node.type == 'Program') return;
+					if (parent.type == 'VariableDeclarator' && prop == 'id') return;
+					if (parent.type == 'AssignmentExpression' && prop == 'left') return;
 					if (node.type == 'MemberExpression' && code.slice(node.start, node.end).indexOf('ENV') == 0) {
 						let start = node.start,
 							end = node.end;
@@ -37,7 +40,15 @@ export default function replace(options = {}) {
 						}
 						if (node.name != 'ENV') return this.skip();
 						magicString.overwrite(start, end, String(JSON.stringify(nkeys.reduce((res, key) => (res ? res[key] : undefined), replaceValues))));
-						this.skip();
+						return this.skip();
+					}
+					if (node.type == 'Identifier' && node.name == 'ENV' && parent.type == 'VariableDeclarator' && prop == 'init') {
+						magicString.overwrite(node.start, node.end, String(JSON.stringify(replaceValues)));
+						return this.skip();
+					}
+					if (node.type == 'Identifier' && node.name == 'ENV' && parent.type == 'AssignmentExpression' && prop == 'right') {
+						magicString.overwrite(node.start, node.end, String(JSON.stringify(replaceValues)));
+						return this.skip();
 					}
 				},
 			});
