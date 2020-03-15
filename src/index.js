@@ -30,6 +30,7 @@ export default function replace(options = {}) {
 					if (node.type == 'Program') return;
 					if (parent.type == 'VariableDeclarator' && prop == 'id') return;
 					if (parent.type == 'AssignmentExpression' && prop == 'left') return;
+					if (parent.type == 'CallExpression' && prop == 'callee') return;
 					if (node.type == 'MemberExpression' && code.slice(node.start, node.end).indexOf('ENV') == 0) {
 						let start = node.start,
 							end = node.end;
